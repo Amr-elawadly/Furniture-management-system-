@@ -1,0 +1,232 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fdfbf9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  direction: rtl;
+  color: #444;
+  padding: 20px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ===================== Animations ===================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===================== Container ===================== */
+
+.company-name {
+  position: absolute;
+  top: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #634832;
+  text-transform: uppercase;
+  animation: slideUp 1s ease forwards;
+}
+
+
+.container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ece8e1;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+  overflow-x: auto;
+  animation: slideUp 0.9s ease forwards;
+}
+
+.container:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+/* ===================== Headings ===================== */
+
+h2 {
+  text-align: center;
+  color: #634832;
+  margin-bottom: 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: scaleIn 0.7s ease forwards;
+}
+
+/* ===================== Form ===================== */
+
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+  color: #8d7765;
+  font-size: 0.95rem;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #e0dcd6;
+  background: #fff;
+  color: #333;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #c4a484;
+  box-shadow: 0 0 0 3px rgba(196, 164, 132, 0.1);
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  border: none;
+  background: #634832;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #4a3525;
+  box-shadow: 0 5px 15px rgba(99, 72, 50, 0.3);
+}
+
+/* ===================== Stagger Animation ===================== */
+
+label,
+input,
+button {
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+label { animation-delay: 0.3s; }
+input { animation-delay: 0.45s; }
+button { animation-delay: 0.65s; }
+
+/* ===================== Table ===================== */
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  margin-top: 35px;
+  width: 100%;
+  min-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #f0ede9;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f8f6f3;
+  color: #634832;
+  padding: 15px;
+  font-weight: 600;
+  border: 1px solid #e0dcd6;
+  white-space: nowrap;
+}
+
+td {
+  padding: 14px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #f0ede9;
+  color: #777;
+  white-space: nowrap;
+}
+
+tr:hover td {
+  background: #fafaf9;
+  color: #634832;
+}
+
+/* ===================== Responsive ===================== */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input, button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  table {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  input, button {
+    width: calc(50% - 10px);
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  input:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
